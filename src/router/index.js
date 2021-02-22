@@ -7,7 +7,7 @@ const router = new VueRouter({
 	mode:"history",
 	routes: [
 		{
-			...pageRouter
+		 ...pageRouter
 		},
 	],
 });
