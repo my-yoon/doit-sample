@@ -1,5 +1,5 @@
 <template>
   <section id="wrap">
-    <router-view />
+    레이아웃
   </section>
 </template>
