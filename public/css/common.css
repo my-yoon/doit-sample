@@ -84,7 +84,7 @@ nav{padding:8px 0;background-color:#ff1f3d; position:relative; z-index:3}
 nav ul{display:flex;}
 nav ul > li{flex:1; text-align:center}
 nav ul > li > button{color:#fff; font-size:16px}
-header{position:relative;z-index:9999}
+header{position:relative;z-index:999}
 header::after{content:""; display:block; width: 100%;height:29px;background-color: #b31f28; position:absolute; left:0; top:70px; transform:rotate(1.5deg); box-shadow:1px 5px 9px -3px rgb(50 50 50 / 75%); z-index:2}
 #wrap{display:flex; flex-direction:column; height:100%;}
 footer{margin-top:auto;position:relative}
@@ -119,4 +119,63 @@ footer{margin-top:auto;position:relative}
   .footer-logo img{width:85px}
   .footer-logo{align-self: flex-start;padding-top: 4px;}
   .footer-info address span{display:block;}
+}
+
+.modal-header:after{display:none}
+.modal-header{padding:10px 20px}
+.modal-header .modal-title{font-size:24px; font-weight:900; color:#222}
+.bi:before{margin-top:-5px; vertical-align: middle;}
+
+/* button */
+.btn{display:block; width:100%; height:40px;line-height:38px; border-radius:5px;font-size:18px; text-align:center}
+.btn-login{background:#17a2b8; color:#fff;}
+.btn-cancel{background:#d5d5d5}
+.btn-tap {display: inline-block;height: 40px;line-height: 40px;font-size: 18px;color: #888;font-weight: 700;position:relative }
+.btn-tap:after{content:"";display: block;width: 0;height: 2px;background: #222; position:absolute; bottom:-5px; left:0}
+.btn-tap.active{color:#222}
+.btn-tap.active:after{width:100%;}
+.btnwrap{margin-top:30px;}
+.btnwrap.half{display:flex;justify-content:space-between; margin-top:30px}
+.btnwrap.half .btn{flex-basis:49%}
+
+
+
+.loginform label {display:block;margin:20px 0 10px 0; font-weight:700; color:#676767; font-size:16px}
+.form-control{height:40px; color:#676767; font-size:14px}
+.form-control::placeholder{ color:#ddd;}
+.form-group .d-block{margin-bottom:10px; font-size:16px}
+.form-group:nth-of-type(1){padding-right:80px; position:relative;}
+.form-group:nth-of-type(1) input + button{width:75px; height:40px; border:solid 1px #ddd; border-radius:0; background:#eee; font-size:14px; position:absolute; right:0; bottom:28px}
+.form-group .form-text{display:block; padding: 0 20px;margin: 10px 0 0 10px;font-size: 12px;color: #17a2b8 !important;opacity: .6; position:relative}
+.form-group .form-text:after{content:"";display:block; width:20px; height:20px;background:url('/images/pencil.svg') no-repeat left center;opacity:.4; position:absolute; left:0; top:0}
+.form-group .custom-control{display:inline-block; margin:0 15px 0 20px}
+.form-group .d-block:before{content:"\f387"; display:inline-block; margin:-5px 3px 0 0; vertical-align:middle;font-family:bootstrap-icons !important}
+.form-group:nth-of-type(1) .d-block:before{content:"\f387";}
+.form-group:nth-of-type(2) .d-block:before{content:"\f458";}
+.form-group:nth-of-type(3) .d-block:before{content:"\f561";}
+.form-group:nth-of-type(4) .d-block:before{content:"\f57f";}
+
+/* main */
+.mainbanner{height:350px; overflow:hidden;text-align:center; background:url('/images/content_bg.png') repeat-x; }
+.mainbanner > img {height:350px}
+.newbook{background:url('/images/content_bg.png') repeat-x;padding:40px 0}
+.maintit{margin-bottom:20px;font-size:38px; color:#222; font-weight:900; text-align:center}
+.maintit > span{display:block; margin-top:10px;font-size:18px; color:#ababab}
+.newbook{max-width:1200px; margin:0 auto;}
+.tap{margin:40px 100px; display:flex;text-align:center;justify-content:space-evenly }
+.mainslider {margin:0 100px; position:relative;}
+.slick-arrow {width: 42px;height: 42px;background: url(/images/arrow-icon.png) no-repeat 0 0/100%;font-size: 0;position: absolute;top: 50%; margin-top: -55px;  z-index: 9;}  
+.slick-arrow.slick-prev{left:10px;}
+.slick-arrow.slick-next{right:10px;transform:rotate(180deg)}
+.rollimg{padding:0 10px} 
+.rollimg > strong{display:block;font-size: 15px;color: #666;}
+.imgbox > img{max-width:100%}
+.textbox{font-size: 13px; color:#ababab;}
+@media screen and (max-width: 767px){
+	.newbook{margin:0 10px}
+	.maintit{font-size:26px}
+	.maintit > span{font-size:14px}
+	.tap{margin:20px 0}
+	.btn-tap {height: 20px;line-height: 20px;font-size: 14px;}
+  .mainslider{margin:0}
 }
