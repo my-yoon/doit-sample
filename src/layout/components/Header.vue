@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header :class="Topclass">
     <div class="topmemu">
     	<div class="contentbox">
     		<div class="logo"><button><img src="/images/logo.png" alt="이지스퍼블리싱로고" /></button></div> 
@@ -100,11 +100,12 @@
         </div>
       </b-form>
       </div>
-  </b-modal>
+    </b-modal>
   </header>
 </template>
 <script>
 export default {
+  name:"Header",
   data(){
     return{
       menulists: [
@@ -119,8 +120,15 @@ export default {
         pass:"",
         mail:"",
         checkedtype:[]
-      }
+      },
+      Topclass:""
     }
+  },
+  mounted() {
+  window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestory() {
+    window.removeEventListener('scroll', this.handleScroll)
   },
   methods:{
     Joinmember(event){
@@ -137,7 +145,16 @@ export default {
       if (this.$router.currentRoute.path !== target) {
         this.$router.push(target)
       }
-    }
+    },
+    handleScroll(){
+      const scrollTop = window.pageYOffset
+      const headerTop =document.querySelector('header').clientHeight
+      if(scrollTop<headerTop){
+        this.Topclass=""
+      }else{
+        this.Topclass="scrollTop"
+      }
+    },
   }
 }
 </script>

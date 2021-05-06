@@ -25,11 +25,37 @@
   			도서검색
   			<span>찾고자하는 도서명을 검색해 주세요</span>
   		</h1>
+      <div class="inputarea">
+        <b-form-input v-model="seacherkeyword" ></b-form-input>
+        <b-button variant="search"><i class="bi bi-search"></i></b-button>
+        <div class="autolayer" :class="{none:autocomplate.length == 0}" v-if="seacherkeyword.length >0">
+          <ul v-if="autocomplate.length > 0">
+        		<li v-for="(item, index) in autocomplate[0].books" :key="index" v-html="item.booktit"></li>
+        	</ul>
+          <div class="nonemessage" v-else>
+            <i class="bi bi-x-circle-fill"></i>
+            검색 결과가 없습니다.
+          </div>
+        </div>
+      </div>
+      <div class="guidehash">
+        <span v-for="(item,index) in hashdata" :key="index" v-html="item.text"></span>
+      </div>
   	</section>
-  	<section class="bannermenu"></section>
-  	<section class="notice">
-  		<h1 class="maintit">공지사항</h1>
-  	</section>
+  	<section class="bannermenu">
+      <div class="itembox" v-for="(item, index) in mainbanner" :key="index"  @click="gotopage(item.url)">
+        <span v-html="item.stitle"></span>
+        <strong v-html="item.maintitle"></strong>
+        <i class="bi" :class="item.iconname"></i>
+      </div>
+    </section>
+    <section class="notice">        
+		<div class="noticebox">            
+			<h1 class="maintit">공지사항</h1>            
+			<b-button variant="noticemore" @click="viewmore($event)" />            
+			<div class="newsitem" v-for="(item, index) in noticelists" :key="index"><strong v-html="item.noticetit"></strong><span v-html="item.date"></span></div>        
+		</div>    
+	</section>
   </section>
 </template>
 <style>
@@ -96,11 +122,51 @@ export default {
           }
         ]
       },
+      hashdata:[
+        {text:"html", value:"html"},
+        {text:"vue", value:"vue"},
+        {text:"css", value:"css"},
+        {text:"javascript", value:"javascript"},
+        {text:"자료구조/알고리즘", value:"자료구조/알고리즘"},
+        {text:"파이썬", value:"파이썬"},
+      ],
+      booksname:[
+        {cata:"html" , books:[
+          {booktit:"웹사이트 따라 만들기" ,author:"김윤미"},
+          {booktit:"html정석" ,author:"고경희"},
+          {booktit:"html정석" ,author:"고경희"},
+          {booktit:"웹사이트 따라 만들기" ,author:"김윤미"}
+        ]},
+        {cata:"vue" , books:[
+          {booktit:"vue.js" ,author:"캡틴판교"},
+          {booktit:"vue1" ,author:"고경희"},
+          {booktit:"vue2" ,author:"고경희"},
+          {booktit:"vue3" ,author:"김윤미"},
+          {booktit:"vue3" ,author:"김윤미"}
+        ]},
+        {cata:"javascript" , books:[
+          {booktit:"1vue.js" ,author:"캡틴판교"},
+          {booktit:"2vue1" ,author:"고경희"},
+          {booktit:"3vue2" ,author:"고경희"},
+          {booktit:"4vue3" ,author:"김윤미"}
+        ]}
+      ],
+      mainbanner:[
+  			{stitle:'대학교수,교육기관 강사전용', maintitle:'교재샘플/강의자료', iconname:'bi-stickies', url:'/classsample'},
+  			{stitle:'스터디카페', maintitle:'DO IT! 스터디룸', iconname:'bi-book-half', url:'https://cafe.naver.com/doitstudyroom'},
+  			{stitle:'이지스의 sns', maintitle:'DO IT! 페이스 북', iconname:'bi-facebook', url:'https://www.facebook.com/easyspub/'},
+  		],
+      seacherkeyword:'',
+      noticelists:[            	
+				{noticetit:"이지스퍼블리싱/이지스에듀 저작물 이용 가이드라인", date:"2021-03-30"},            
+				{noticetit:"[서평단 모집] Do it! 오토캐드 2021", date:"2020.06.04"},            
+				{noticetit:"IT 분야 기획편집자 신입⦁경력직 모집중(~6/24(수요일)까지)", date:"2020.06.03"},        
+			] 
     }
   },
   methods:{
     AddContents(contents, event){
-      console.log(event)
+      document.querySelector(".active").classList.remove('active')
       event.target.classList.add('active')
       if(contents == 'it'){
         this.Newbooks =this.Newbooks_it
@@ -111,10 +177,34 @@ export default {
       }else if(contents == 'science'){
         this.Newbooks =this.Newbooks_science
       }
-    }
+    },
+    gotopage(url){
+      if(url=='/classsample'){
+  	  	this.$router.push(url)
+  	  }else{
+  	  	window.open(url, '_blank')
+  	  }
+    },
+    viewmore(event){
+      if(event.target.parentElement.classList.contains("full") == false){
+        event.target.parentElement.classList.add("full")
+      }else{
+        event.target.parentElement.classList.remove("full")
+      }
+			
+		}
   },
   created(){
     this.Newbooks = this.Newbooks_it
+  },
+  computed:{
+  	autocomplate(){
+      const resultlists= this.booksname.filter((item) => {
+        if(item.cata.match(this.seacherkeyword))
+          return item;
+      });
+      return resultlists
+  	}
   }
 }
 </script>
