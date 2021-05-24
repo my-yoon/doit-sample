@@ -43,15 +43,3 @@ export default {
   },
 }
 </script>
-<style>
-.introcon{background:url('/images/main_ico2.png') no-repeat right 10px/190px}
-.introgroup{padding-right:300px;margin-bottom:30px}
-.introgroup strong{display: block;margin-bottom: 10px;font-size: 25px;font-weight: 900; color: #222;}
-.introgroup:nth-of-type(2){background:url('/images/main_ico1.png') no-repeat left 0px/200px; padding:0 0 0 300px}
-@media screen and (max-width: 767px){
-  .introcon{background:none}
-  .introgroup {padding-right:0}
-  .introgroup strong{font-size:18px;}
-  .introgroup:nth-of-type(2){background:url('/images/main_ico1.png') no-repeat center 0px/200px; padding:193px 0 0 0px}
-}
-</style>

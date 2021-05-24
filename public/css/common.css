@@ -102,10 +102,9 @@ footer{margin-top:auto;position:relative}
 .footer-sub{flex:1; padding-left:20px; font-size:12px;}
 .scrollTop{width: 100%;position: fixed;left: 0;top: 0;z-index: 9999;transition-duration: .3s;}
 .scrollTop .topmemu{display:none}
-header { height: 50px;}
 header.scrollTop:after {position: fixed;top:22px}
 #container{flex:0 0 auto}
-.scrollTop + #container{padding-top: 50px;}
+.scrollTop + #container{padding-top: 90px;}
 @media screen and (max-width: 767px){
 	.system > button{width:25px; height:25px; font-size:0}
 	.system > button:before{display:none}
@@ -346,3 +345,26 @@ header.scrollTop:after {position: fixed;top:22px}
 .classsample .form-group > div{flex:1 1 0}
 .classsample .form-group  input.form-control{height:30px}
 .classsample .form-group small{font-size:14px; margin-top:5px;}
+
+
+/* 도서소개 */
+.introcon{background:url('/images/main_ico2.png') no-repeat right 10px/190px}
+.introgroup{padding-right:300px;margin-bottom:30px}
+.introgroup strong{display: block;margin-bottom: 10px;font-size: 25px;font-weight: 900; color: #222;}
+.introgroup:nth-of-type(2){background:url('/images/main_ico1.png') no-repeat left 0px/200px; padding:0 0 0 300px}
+@media screen and (max-width: 767px){
+  .introcon{background:none}
+  .introgroup {padding-right:0}
+  .introgroup strong{font-size:18px;}
+  .introgroup:nth-of-type(2){background:url('/images/main_ico1.png') no-repeat center 0px/200px; padding:193px 0 0 0px}
+}
+
+.classsample .form-group .d-block:before{margin-top:-2px}
+.classsample .form-group:nth-of-type(1) .d-block:before{content:"\f193"}
+.classsample .form-group:nth-of-type(2) .d-block:before{content:"\f19e"}
+.classsample .form-group:nth-of-type(3) .d-block:before{content:"\f398"}
+.classsample .form-group:nth-of-type(4) .d-block:before{content:"\f386"}
+.classsample .form-group:nth-of-type(5) .d-block:before{content:"\f402"}
+.classsample .form-group:nth-of-type(6) .d-block:before{content:"\f30c"}
+.classsample .form-group:nth-of-type(7) .d-block:before{content:"\f24c"}
+.classsample .form-group:nth-of-type(8) .d-block:before{content:"\f40d"}
