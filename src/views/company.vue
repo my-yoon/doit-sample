@@ -3,7 +3,7 @@
     <div class="company">
       <div class="introcon">
         <div class="introgroup">
-          <strong>“사람을 구체적으로 도와주는 책”</strong>
+          <strong><i class="bi bi-people-fill"></i> “사람을 구체적으로 도와주는 책”</strong>
           <p>
             이지스퍼블리싱(주)의 책에는 ‘사람들에게 구체적으로 도움이 되는 책’을 만든다는 출판 가치가 담겨 있습니다.<br />
             2010년 5월 출범한 이지스퍼블리싱(주)는 크게 두 영역의 책을 출간합니다. IT 실용 도서와 학습 분야 도서입니다.<br />
@@ -11,7 +11,7 @@
           </p>
         </div>
         <div class="introgroup">
-          <strong>이지스퍼블리싱의 미션</strong>
+          <strong><i class="bi bi-camera-reels-fill"></i> 이지스퍼블리싱의 미션</strong>
           <p>
             사람에게 구체적으로 도움을 주는 책<br />
             우리는 열심히 사는 사람들에게 도움이 되고 싶습니다.<br />
@@ -23,7 +23,7 @@
           </p>
         </div>
         <div class="introgroup">
-          <strong>조직관</strong>
+          <strong><i class="bi bi-diagram-3-fill"></i> 조직관</strong>
           <p>
             이지스퍼블리싱(주)에 참여하는 모든 사람에게 도움을 주고 싶습니다.<br />
             함께 참여해서 만드는 기쁨, 세상에 도움을 주는 뿌듯함을 느끼며 책을 만들고,<br />
