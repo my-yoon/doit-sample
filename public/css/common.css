@@ -100,10 +100,12 @@ footer{margin-top:auto;position:relative}
 .footer-logo, .footer-sub{position:relative; z-index:3}
 .footer-logo img{width:125px;}
 .footer-sub{flex:1; padding-left:20px; font-size:12px;}
-.scrollTop{width: 100%;position: fixed;left: 0;top: 0;z-index: 9999;}
+.scrollTop{width: 100%;position: fixed;left: 0;top: 0;z-index: 9999;transition-duration: .3s;}
 .scrollTop .topmemu{display:none}
+header { height: 50px;}
 header.scrollTop:after {position: fixed;top:22px}
 #container{flex:0 0 auto}
+.scrollTop + #container{padding-top: 50px;}
 @media screen and (max-width: 767px){
 	.system > button{width:25px; height:25px; font-size:0}
 	.system > button:before{display:none}
@@ -242,7 +244,7 @@ header.scrollTop:after {position: fixed;top:22px}
 .newsitem span{font-size:13px; color:#888}
 .noticebox.full{height:auto;}
 .noticebox.full .btn-noticemore{transform:rotate(90deg)}
-@media screen and (max-width: 723px){
+@media screen and (max-width: 767px){
 	.noticebox{padding:10px 20px; height:45px}
 	.noticebox .maintit{position:static;text-align:left; margin-bottom:20px}
 	.noticebox .newsitem{padding:0px; display:block}
@@ -269,6 +271,7 @@ header.scrollTop:after {position: fixed;top:22px}
 .imgview img{width:100%;}
 .bookbtns{display: flex;justify-content: space-between;margin-top: 12px;max-width: 260px;}
 .bookbtns .btn-lightgray{width:49%}
+.bookbtns .btn-lightgray .bi:before{margin:-2px 2px 0 0}
 .infolist{flex:1 1 auto;padding:0 20px}
 .infolist li {margin-bottom:22px;font-size: 16px;}
 .infolist li .label, .infolist li .infocontent{display: inline-block;}
@@ -286,3 +289,60 @@ header.scrollTop:after {position: fixed;top:22px}
   .infolist li .label{width:120px}
   .infolist li .label:after{width:14px; height:14px; top:3px}
 }
+
+.detailTap{display:flex}
+.detailTap .btn-group-toggle{flex: 1 1 auto; height: 40px;border-left: solid 1px #ddd; background-color: #eaeaea;}
+.btn-detailtap{color: #aeaeae;font-size: 14px;text-align: center;line-height: 40px;border-radius:0}
+.btn-detailtap .bi:before{margin:-2px 2px 0 0}
+.detailTap .btn-group-toggle:nth-of-type(1){border-left:none}
+.btn-detailtap.active {background-color: #606060; color: #fff;}
+.detailTapCon {padding:30px;}
+.tapcontit {margin-bottom: 20px;font-size: 18px;color: #7952b3; font-weight: 900;}
+.tapcontit > strong {color: #7952b3;font-size: 24px;font-weight: 900}
+.detailTapCon > P{margin-bottom:20px;}
+@media screen and (max-width: 767px){
+.detailTap{flex-wrap:wrap}
+.detailTap .btn-group-toggle{flex-basis: 33.3%;flex-shrink: 0;}  
+.detailTapCon { padding: 20px 0;} 
+.tapcontit, .tapcontit > strong{font-size:15px}
+.detailTap .btn-group-toggle:nth-of-type(4){border-left:none}
+}
+
+
+.bookpage .rollimg{cursor: pointer;}
+.bookpage .rollimg .imgbox{display: block;}
+.bookpage .rollimg.active .imgbox{border:solid 3px #d1e0e5}
+
+/* 자료실 동영상강의 */
+.subpageguide{margin-bottom:30px; color:#ababab}
+.listnum strong{color:#dc3545}
+.listbox{margin-top: 20px;padding: 20px; border: solid 1px #ddd;}
+.listitem{display: flex;margin-top: 30px;padding-bottom: 20px;border-bottom: solid 1px #ddd;}
+.listitem:nth-of-type(1){margin-top:0}
+.listthum{width:160px;}
+.listthum img{max-width:100%;}
+.listdetail{flex: 1 1 auto;padding: 10px 0 0 40px;}
+.listdetail > strong{display: block;margin-bottom: 10px;padding: 0 0 10px;border-bottom: solid 1px #ddd;font-size: 20px;color: #dd868a;}
+.listdate{text-align: right;color: #ababab;font-size: 13px;}
+.itembtns {margin: 10px 0 20px;}
+.btn-listdown{display:inline-block;height: 30px;padding: 0 20px;margin-right: 10px;min-width: 140px; font-size: 14px; background-color: #dd868a;color: #fff;width:auto;border-radius: 0;line-height: 28px;}
+.btn-listdown .bi:before{margin-top:-2px}
+.downguide{color: #ababab;font-size: 12px;}
+@media screen and (max-width: 767px){
+  .listitem{flex-direction:column; align-items: center; justify-content: center;}
+  .listthum{height:160px}
+  .listdetail{padding-left:0}
+}
+.moveclasspage .listnum strong, .moveclasspage .listdetail > strong{color: #7952b3;}
+.moveclasspage .btn-listdown{background-color:#7952b3}
+
+
+
+/* 교재샘플 */
+.classsample form{max-width: 480px; margin:0 auto;}
+.classsample .form-group:nth-of-type(1){padding-right:0}
+.classsample .form-group{display:flex}
+.classsample .form-group > label{flex-basis:130px;}
+.classsample .form-group > div{flex:1 1 0}
+.classsample .form-group  input.form-control{height:30px}
+.classsample .form-group small{font-size:14px; margin-top:5px;}
