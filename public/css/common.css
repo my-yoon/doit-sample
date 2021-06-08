@@ -22,29 +22,6 @@
          url('fonts/NotoSansKR-Medium.otf') format('opentype'),
          local("※");
     }
-    @font-face {
-    font-family:'NsrL';
-    font-weight: normal;
-    font-style: normal;
-    src: url('fonts/NanumSquareRoundR.eot');
-    src: url('fonts/NanumSquareRoundR.eot?#iefix') format('embedded-opentype'),
-         url('fonts/NanumSquareRoundR.woff') format('woff'),
-         url('fonts/NanumSquareRoundR.otf') format('opentype'),
-         url('fonts/NanumSquareRoundR.ttf') format('truetype'),
-         local("※");
-    }
-    @font-face {
-    font-family:'NsrB';
-    font-weight: normal;
-    font-style: normal;
-    src: url('fonts/NanumSquareRoundB.eot');
-    src: url('fonts/NanumSquareRoundB.eot?#iefix') format('embedded-opentype'),
-         url('fonts/NanumSquareRoundB.woff') format('woff'),
-         url('fonts/NanumSquareRoundB.otf') format('opentype'),
-         url('fonts/NanumSquareRoundB.ttf') format('truetype'),
-         local("※");
-    }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;900&display=swap');
 html, body {width:100%; min-height:100%; height:100%; color:#737373;  font-family: 'NotoL'; font-size: 14px;}
 html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, button, abbr, acronym, address, code,del, 
 dfn, em, img, strong, sub, sup, dl, dt, dd, ol, ul, li, fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, 
